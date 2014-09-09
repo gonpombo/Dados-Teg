@@ -7,7 +7,7 @@ app.controller('TegController', ['$scope', function($scope) {
 	$scope.rdices = [];
 	$scope.sacaAta;
 	$scope.sacaDef;
-	$scope.BtnDisabled = false;
+	$scope.btnDisabled = false;
 	$scope.comboImg = 'images/combo.jpg'
 	$scope.cBreaker = false;
   $("#comboIm").toggle();
@@ -44,6 +44,10 @@ app.controller('TegController', ['$scope', function($scope) {
       $("#comboIm").toggle("scale");
   	}
 
+  	var btnEnable = function() {
+  		$scope.btnDisabled = false;
+  	}
+
 	var restart = function() {
 		$scope.defensor = [];
 		$scope.atacante = [];
@@ -71,11 +75,15 @@ app.controller('TegController', ['$scope', function($scope) {
     if(($scope.cantAt == 3) && ($scope.cantDe == 1) && ($scope.sacaAta == 1)) {
        document.getElementById("comboB").play();
         $("#comboIm").toggle("bounce");
+        $scope.BtnDisabled = true;
         setTimeout(function(){ setFalse() }, 2000);
+        setTimeout(function(){ btnEnable() }, 2000);
       } else if(($scope.cantAt == 1) && ($scope.cantDe == 3) && ($scope.sacaDef == 1)) {
         document.getElementById("comboB").play();
         $("#comboIm").toggle("bounce");
-        setTimeout(function(){ setFal	se() }, 2000);
+        $scope.BtnDisabled = true;
+        setTimeout(function(){ setFalse() }, 2000);
+        setTimeout(function(){ btnEnable() }, 2000);
       } else if(($scope.cantAt == 3) && ($scope.cantDe == 3) && (($scope.sacaAta == 3) || ($scope.sacaDef == 3))) {
        	document.getElementById(sounds[random(0,2)]).play();
        	var med = new Media("/www/sounds/perdiste.mp3").play();
@@ -83,6 +91,10 @@ app.controller('TegController', ['$scope', function($scope) {
        	var med2 = new Media("/sounds/perdiste.mp3").play();
        	var med3 = new Media("perdiste.mp3").play();
        	var med4 = new Media("/android/www/sounds/perdiste.mp3").play();
+
+       	$scope.BtnDisabled = true;
+        setTimeout(function(){ btnEnable() }, 2000);
+
       }
   	}
 
