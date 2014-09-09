@@ -84,7 +84,7 @@ app.controller('TegController', ['$scope', function($scope) {
         $scope.BtnDisabled = true;
         setTimeout(function(){ setFalse() }, 2000);
         setTimeout(function(){ btnEnable() }, 2000);
-      } else if(($scope.cantAt == 3) && ($scope.cantDe == 3) && (($scope.sacaAta == 3) || ($scope.sacaDef == 3))) {
+      } else if(($scope.cantAt == 3) && ($scope.cantDe == 3) && ($scope.sacaAta == 3)) {
        	document.getElementById(sounds[random(0,2)]).play();
        	var med = new Media("/www/sounds/perdiste.mp3").play();
        	var med1 = new Media("/android_asset/www/sounds/perdiste.mp3").play();
