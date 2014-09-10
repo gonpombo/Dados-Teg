@@ -85,12 +85,12 @@ app.controller('TegController', ['$scope', function($scope) {
         setTimeout(function(){ setFalse() }, 2000);
         setTimeout(function(){ btnEnable() }, 2000);
       } else if(($scope.cantAt == 3) && ($scope.cantDe == 3) && ($scope.sacaAta == 3)) {
-       	document.getElementById(sounds[random(0,2)]).play();
-       	var med = new Media("/www/sounds/perdiste.mp3").play();
+       	//document.getElementById(sounds[random(0,2)]).play();
+       	//var med = new Media("/www/sounds/perdiste.mp3").play();
        	var med1 = new Media("/android_asset/www/sounds/perdiste.mp3").play();
-       	var med2 = new Media("/sounds/perdiste.mp3").play();
-       	var med3 = new Media("perdiste.mp3").play();
-       	var med4 = new Media("/android/www/sounds/perdiste.mp3").play();
+       	//var med2 = new Media("/sounds/perdiste.mp3").play();
+       	//var med3 = new Media("perdiste.mp3").play();
+       	//var med4 = new Media("/android/www/sounds/perdiste.mp3").play();
 
        	$scope.BtnDisabled = true;
         setTimeout(function(){ btnEnable() }, 2000);
